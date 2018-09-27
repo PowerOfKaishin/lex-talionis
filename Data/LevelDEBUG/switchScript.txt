@@ -1,12 +1,13 @@
 set_origin
 if;self.name == 'NavigationSwitch'
-	if;gameStateObj.level_constants['telePower'] >= 3
+	if;gameStateObj.level_constants['telePower'] >= 5
 		set_tile_info;o0,0
+		inc_level_constant;navSwitchPulled
 		# change_tile_sprite;o0,0;pulled_nav_switch
 		set_level_constant;teleCoordinates;1
 		set_cursor;13,19
 		wait;200
-		change_tile_sprite;13,19;WarpPanelGolden
+		change_tile_sprite;12,18;WarpPanelGolden
 		wait;200
 		# appropriate dialogue
 		set_tile_info;13,19;Escape=0
@@ -16,13 +17,14 @@ if;self.name == 'NavigationSwitch'
 		#Dialogue of Lucia yelling at Noah that the teleporter doesn't have enough power
 	end
 else
-	set_tile_info;o0,0
 	if;self.name == 'PowerSwitch'
 		# change_tile_sprite;o0,0;pulled_power_switch
+		set_tile_info;o0,0
 		inc_level_constant;telePower
-		if;gameStateObj.level_constants['telePower'] == 3
+		if;gameStateObj.level_constants['telePower'] >=5 and gameStateObj.level_constants['navSwitchPulled'] !=1
+			set_cursor;13,19
 			wait;200
-			change_tile_sprite;13,19;WarpPanelRed
+			change_tile_sprite;12,18;WarpPanelRed
 			wait;200
 			#Dialogue telling Noah to have someone set the coordinates
 		end

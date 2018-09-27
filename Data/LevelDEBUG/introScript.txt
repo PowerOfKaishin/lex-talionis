@@ -1,5 +1,6 @@
 # Intro Script
 set_level_constant;telePower;0
+set_level_constant;navSwitchPulled;0
 set_level_constant;wyvTurnSpawn;0
 set_level_constant;thiefCounter;0
 

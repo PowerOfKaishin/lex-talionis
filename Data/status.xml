@@ -48,9 +48,9 @@
 		<image_index>5,5</image_index>
 		<components>stat_change,upkeep_stat_change,time</components>
 
-		<time>5</time>
+		<time>3</time>
 		<!-- HP, STR, MAG, SKL, SPD, LCK, DEF, RES, CON, MOV -->
-    	<stat_change>0,0,0,0,0,0,0,5,0,0</stat_change>
+    	<stat_change>0,0,0,0,0,0,0,3,0,0</stat_change>
     	<upkeep_stat_change>0,0,0,0,0,0,0,-1,0,0</upkeep_stat_change>
     </status>
 
@@ -184,6 +184,15 @@
     </status>
 
     <!-- FEATS -->
+	<status name="Elite">
+        <id>fElite</id>
+        <desc>An elite unit. +2 to most stats.</desc>
+        <image_index>0,1</image_index>
+        <components>stat_change,class_skill</components>
+        <!-- HP, STR, MAG, SKL, SPD, LCK, DEF, RES, CON, MOV -->
+        <stat_change>0,2,2,2,2,0,2,2,0,0</stat_change>
+    </status>
+	
     <status name="Strength +2">
         <id>fStrength +2</id>
         <desc>Grants STR +2.</desc>

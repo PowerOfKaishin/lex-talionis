@@ -1,0 +1,4 @@
+Tips for making later levels
+
+
+Have each piece (set of enemies, chest, door, switch) interact with other pieces (ie one ballista is in range of another but both have to be taken care of by different parties)

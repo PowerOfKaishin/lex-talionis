@@ -1,0 +1,55 @@
+# UnitLevel.txt is used to define what units will be part of this level and where they will spawn
+# 
+# Each unit belongs on its own line
+# Syntax:
+# New Units:
+# team; 0; event_id; class; level; items; position; ai; faction; status (optional)
+# - OR -
+# Named units:
+# team; 1; event_id; unit_id; position; ai
+# - OR -
+# Created Units:
+# team; 2; event_id; class; items; position; ai; faction; status (optional)
+# 
+# event_id gives the unit a unique id that scripts can use. The unit will not start on the battlefield unless event_id == 0.
+# unit_id - unit to load from the units.xml file
+# position should be formatted like #,#
+# ai refers to what kind of AI the unit should possess.
+#
+# --------------------------------------------
+faction;Byrak;Soldier;Bandit;A Byrak Soldier
+faction;Evans;Soldier;Empire;
+# Player Characters
+player;0;0;Noah2;10,22;None
+player;0;0;Kalin2;10,23;None
+player;0;0;Tomoe2;9,3;None
+player;0;0;Edessa2;10,3;None
+player;0;0;Owen2;11,14;None
+player;0;0;Lucia2;12,15;None
+player;0;0;Clyde2;10,13;None
+player;0;0;Lily2;9,4;None
+player;0;0;Celeste2;12,13;None
+# Enemies
+# Generics
+enemy;0;0;Brigand;3;Hand Axe;15,0;PursueVillage;Byrak
+enemy;0;0;Brigand;3;Hand Axe;17,0;PursueVillage;Byrak
+enemy;0;0;Brigand;3;Hand Axe;11,19;PursueVillage;Byrak
+enemy;0;0;Dracoknight;3;Iron Axe;0,27;Seize;Evans
+enemy;0;0;Dracoknight;3;Iron Axe;1,27;Seize;Evans
+enemy;0;0;Dracoknight;3;Iron Axe;2,27;Seize;Evans
+enemy;0;0;Cavalier;3;Steel Sword,Javelin;20,24;Seize;Evans
+enemy;0;0;Cavalier;3;dSteel Lance;19,25;Seize;Evans
+enemy;0;0;Cavalier;3;Lancereaver;18,26;Seize;Evans
+enemy;0;0;Myrmidon;3;Steel Sword;16,8;SoftGuard;Byrak
+enemy;0;0;Archer;3;Steel Bow;17,8;SoftGuard;Byrak
+enemy;0;0;Mage;3;Fire;2,0;SoftGuard;Byrak
+enemy;0;0;Mage;3;Fire;3,1;SoftGuard;Byrak
+enemy;0;0;Mage;3;Fire;1,2;SoftGuard;Byrak
+enemy;0;0;Shaman;3;Flux;2,10;SoftGuard;Byrak
+enemy;0;0;Shaman;3;Flux;3,10;SoftGuard;Byrak
+enemy;0;0;Thief;3;Iron Sword;21,27;PursueVillage;Evans
+enemy;0;0;Archer;3;Steel Bow;16,9;SoftGuard;Byrak
+# === Reinforcements ===
+# Player Characters
+# Enemies
+# === Triggers ===

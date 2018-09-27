@@ -24,88 +24,78 @@ player;0;0;Owen;25,18;None
 player;0;0;Celeste;26,18;None
 player;0;0;Clyde;26,20;None
 player;0;0;Lucia;25,20;None
-player;0;0;Noah;25,19;None
-player;0;0;Lily;26,19;None
-player;0;0;Tomoe;4,14;None
-player;0;0;Edessa;2,14;None
-# Other Characters
-other;0;0;Citizen;1;;26,23;Escape;Valeria
-other;0;0;Citizen;1;;26,15;Escape;Valeria
-other;0;0;Citizen;1;;22,15;Escape;Valeria
-other;0;0;Citizen;1;;22,23;Escape;Valeria
+player;0;0;Noah2;25,19;None
+player;0;0;Lily2;26,19;None
+player;0;0;Tomoe;6,16;None
+player;0;0;Edessa2;4,16;None
 # Enemies
 # Bosses
-enemy;0;0;CmdrKalin;13,8;HardGuard
+enemy;0;0;CmdrKalin;13,9;HardGuard
 # Generics
 mode;Hard,Lunatic
-enemy;0;0;Ballista;2;Ballista;11,35;HardGuard;Fulmor
-enemy;0;0;Ballista;2;Ballista;15,35;HardGuard;Fulmor
-enemy;0;0;Sentinel;2;Iron Axe;15,19;Attack;Fulmor
-enemy;0;0;Dracoknight;4;Steel Axe,Hand Axe;10,35;SoftGuard;Fulmor
-enemy;0;0;Dracoknight;4;Steel Axe,Hand Axe;16,35;SoftGuard;Fulmor
-enemy;0;0;Mage;2;Wind;7,18;SoftGuard;Fulmor
-enemy;0;0;Mage;2;Wind;7,20;SoftGuard;Fulmor
-enemy;0;0;Mage;2;Fire;32,0;PursueIgnoreOther;Fulmor
-enemy;0;0;Mage;2;Fire;30,2;PursueIgnoreOther;Fulmor
+enemy;0;0;Knight;3;Javelin;17,15;HardGuard;Fulmor
+enemy;0;0;Knight;3;Javelin;17,23;HardGuard;Fulmor
+enemy;0;0;Knight;3;Javelin;9,23;HardGuard;Fulmor
+enemy;0;0;Knight;3;Javelin;9,15;HardGuard;Fulmor
 mode;Lunatic
-enemy;0;0;Dracoknight;4;Steel Axe,Hand Axe;10,33;SoftGuard;Fulmor
-enemy;0;0;Dracoknight;4;Steel Axe,Hand Axe;16,33;SoftGuard;Fulmor
-enemy;0;0;Mage;2;Meteor;7,25;SoftGuard;Fulmor
-enemy;0;0;Mage;2;Meteor;7,13;SoftGuard;Fulmor
-enemy;0;0;Cavalier;3;Iron Sword;29,17;PursueIgnoreOther;Fulmor
-enemy;0;0;Cavalier;3;Iron Lance;30,18;PursueIgnoreOther;Fulmor
-enemy;0;0;Cavalier;3;Iron Sword;31,19;PursueIgnoreOther;Fulmor
+enemy;0;0;Cavalier;3;Iron Sword,Iron Lance;29,17;PursueIgnoreOther;Fulmor
+enemy;0;0;Cavalier;3;Iron Sword,Iron Lance;30,18;PursueIgnoreOther;Fulmor
+enemy;0;0;Cavalier;3;Iron Sword,Iron Lance;31,19;PursueIgnoreOther;Fulmor
+enemy;0;0;Ballista;2;Ballista;10,16;HardGuard;Fulmor
+enemy;0;0;Ballista;2;Ballista;10,22;HardGuard;Fulmor
+mode;Normal
+enemy;0;0;Sentinel;2;Hand Axe;17,23;HardGuard;Fulmor
+enemy;0;0;Sentinel;2;Hand Axe;9,23;HardGuard;Fulmor
+enemy;0;0;Sentinel;2;Hand Axe;9,15;HardGuard;Fulmor
+enemy;0;0;Sentinel;2;Hand Axe;17,15;HardGuard;Fulmor
 mode;Normal,Hard,Lunatic
-enemy;0;0;Ballista;2;Ballista;18,14;HardGuard;Fulmor
-enemy;0;0;Ballista;2;Ballista;18,24;HardGuard;Fulmor
-enemy;0;0;Ballista;2;Ballista;8,14;HardGuard;Fulmor
-enemy;0;0;Ballista;2;Ballista;8,24;HardGuard;Fulmor
-enemy;0;0;Knight;3;Iron Lance;20,18;SoftGuard;Fulmor
-enemy;0;0;Sentinel;3;Iron Axe,dSkeleton Key;20,19;SoftGuard;Fulmor
-enemy;0;0;Knight;3;Iron Lance;20,20;SoftGuard;Fulmor
-enemy;0;0;Knight;2;Iron Lance;12,26;SoftGuard;Fulmor
-enemy;0;0;Knight;2;Iron Lance;13,26;SoftGuard;Fulmor
-enemy;0;0;Knight;2;Iron Lance;14,26;SoftGuard;Fulmor
-enemy;0;0;Sentinel;7;Hand Axe;13,19;HardGuard;Fulmor
-enemy;0;0;Sentinel;7;Hand Axe;13,35;HardGuard;Fulmor
-enemy;0;0;Sentinel;2;Iron Axe;15,18;SoftGuard;Fulmor
-enemy;0;0;Sentinel;2;Iron Axe;15,20;SoftGuard;Fulmor
-enemy;0;0;Shaman;7;Nyx;3,24;HardGuard;Fulmor;Rex_Aegis
-enemy;0;0;Mage;7;Elwind;17,28;HardGuard;Fulmor
-enemy;0;0;Mage;2;Fire;30,0;PursueIgnoreOther;Fulmor
-enemy;0;0;Mage;2;Fire;31,1;PursueIgnoreOther;Fulmor
-enemy;0;0;Mage;2;Fire;32,2;PursueIgnoreOther;Fulmor
-enemy;0;0;Mercenary;2;Iron Sword;2,18;SoftGuard;Fulmor
+enemy;0;0;Dracoknight;4;Steel Axe,Hand Axe;12,34;SoftGuard;Fulmor
+enemy;0;0;Dracoknight;4;Steel Axe,Hand Axe;14,34;SoftGuard;Fulmor
+enemy;0;0;Mage;7;Elthunder,dWind;13,19;HardGuard;Fulmor;fElite
+enemy;0;0;Knight;5;Javelin;15,19;SoftGuard;Fulmor
+enemy;0;0;Mage;4;Fire;30,0;PursueIgnoreOther;Fulmor
+enemy;0;0;Mage;4;Fire;31,1;PursueIgnoreOther;Fulmor
+enemy;0;0;Mage;4;Fire;32,2;PursueIgnoreOther;Fulmor
 enemy;0;0;Mercenary;2;Iron Sword;4,18;SoftGuard;Fulmor
-enemy;0;0;Mercenary;2;Iron Sword;3,19;SoftGuard;Fulmor
-enemy;0;0;Mercenary;2;Iron Sword;2,20;SoftGuard;Fulmor
+enemy;0;0;Mercenary;2;Iron Sword;5,19;SoftGuard;Fulmor
+enemy;0;0;Mercenary;2;Iron Sword;6,20;SoftGuard;Fulmor
 enemy;0;0;Mercenary;2;Iron Sword;4,20;SoftGuard;Fulmor
-enemy;0;0;Mage;2;dWind;7,19;SoftGuard;Fulmor
-enemy;0;0;Shaman;2;dFlux;15,17;SoftGuard;Fulmor
-enemy;0;0;Shaman;2;Flux;15,21;SoftGuard;Fulmor
-enemy;0;0;Dracoknight;2;Iron Axe;12,3;SoftGuard;Fulmor
-enemy;0;0;Dracoknight;2;Iron Axe;14,3;SoftGuard;Fulmor
-enemy;0;0;Dracoknight;2;Iron Axe;13,4;SoftGuard;Fulmor
-enemy;0;0;Sentinel;7;Hand Axe,dPower Ring;26,34;HardGuard;Fulmor
-enemy;0;0;Mage;2;Meteor;8,36;HardGuard;Fulmor
-enemy;0;0;Mage;2;Meteor;18,36;HardGuard;Fulmor
-enemy;0;0;Archer;2;Iron Bow;17,13;SoftGuard;Fulmor
-enemy;0;0;Archer;2;Iron Bow;19,13;SoftGuard;Fulmor
-enemy;0;0;Archer;2;Iron Bow;17,25;SoftGuard;Fulmor
-enemy;0;0;Archer;2;Iron Bow;19,25;SoftGuard;Fulmor
+enemy;0;0;Mercenary;2;Iron Sword;6,18;SoftGuard;Fulmor
+enemy;0;0;Shaman;7;Nyx;5,24;HardGuard;Fulmor;Rex_Aegis,fElite
+enemy;0;0;Shaman;5;dFlux,Stun;14,19;SoftGuard;Fulmor
+enemy;0;0;Mercenary;3;Iron Sword;12,25;SoftGuard;Fulmor
+enemy;0;0;Mercenary;3;Iron Sword;13,25;SoftGuard;Fulmor
+enemy;0;0;Mercenary;3;Iron Sword;14,25;SoftGuard;Fulmor
+enemy;0;0;Knight;2;Iron Lance,dSkeleton Key;20,19;SoftGuard;Fulmor
+enemy;0;0;Sentinel;2;Iron Axe;20,18;SoftGuard;Fulmor
+enemy;0;0;Sentinel;2;Iron Axe;20,20;SoftGuard;Fulmor
+enemy;0;0;Dracoknight;3;Hand Axe;13,6;SoftGuard;Fulmor
+enemy;0;0;Dracoknight;3;Hand Axe;12,5;SoftGuard;Fulmor
+enemy;0;0;Dracoknight;3;Hand Axe;14,5;SoftGuard;Fulmor
+enemy;0;0;Shaman;5;Flux,Stun;14,32;SoftGuard;Fulmor
+enemy;0;0;Shaman;5;Flux,Stun;12,32;SoftGuard;Fulmor
 # === Reinforcements ===
 # Player Characters
 # Enemies
 # Bosses
 enemy;0;Leon_1;Leon;13,36;Pursue
 # Generics
-enemy;0;Thief1_2;Thief;2;Iron Sword;11,3;ThiefEscape;Fulmor
-enemy;0;Wyv1_1;Dracoknight;3;Hand Axe;11,36;Pursue;Fulmor
-enemy;0;Wyv1_2;Dracoknight;3;Hand Axe;12,36;Pursue;Fulmor
-enemy;0;Wyv1_3;Dracoknight;3;Hand Axe;14,36;Pursue;Fulmor
-enemy;0;Wyv1_4;Dracoknight;3;Hand Axe;15,36;Pursue;Fulmor
-enemy;0;Wyv2_1;Dracoknight;3;Hand Axe;11,36;Pursue;Fulmor
-enemy;0;Wyv2_2;Dracoknight;3;Hand Axe;12,36;Pursue;Fulmor
-enemy;0;Wyv2_3;Dracoknight;3;Hand Axe;14,36;Pursue;Fulmor
-enemy;0;Wyv2_4;Dracoknight;3;Hand Axe;15,36;Pursue;Fulmor
+enemy;0;Wyv1_1;Dracoknight;4;Hand Axe;11,36;Pursue;Fulmor
+enemy;0;Wyv1_2;Dracoknight;4;Hand Axe;12,36;Pursue;Fulmor
+enemy;0;Wyv1_3;Dracoknight;4;Hand Axe;14,36;Pursue;Fulmor
+enemy;0;Wyv1_4;Dracoknight;4;Hand Axe;15,36;Pursue;Fulmor
+enemy;0;Wyv2_1;Dracoknight;4;Hand Axe;11,36;Pursue;Fulmor
+enemy;0;Wyv2_2;Dracoknight;4;Hand Axe;12,36;Pursue;Fulmor
+enemy;0;Wyv2_3;Dracoknight;4;Hand Axe;14,36;Pursue;Fulmor
+enemy;0;Wyv2_4;Dracoknight;4;Hand Axe;15,36;Pursue;Fulmor
+enemy;0;Thief1_1;Thief;2;Iron Sword;12,4;ThiefEscape;Fulmor
+enemy;0;Cav1_1;Cavalier;2;Iron Sword,Iron Lance;12,36;Pursue;Fulmor
+enemy;0;Cav1_2;Cavalier;2;Iron Sword,dIron Lance;13,36;Pursue;Fulmor
+enemy;0;Cav1_3;Cavalier;2;Iron Sword,Iron Lance;14,36;Pursue;Fulmor
+enemy;0;Cav2_1;Cavalier;3;Iron Sword,Iron Lance;12,36;Pursue;Fulmor
+enemy;0;Cav2_2;Cavalier;3;Iron Sword,Iron Lance;13,36;Pursue;Fulmor
+enemy;0;Cav2_3;Cavalier;3;Iron Sword,Iron Lance;14,36;Pursue;Fulmor
+enemy;0;Cav3_1;Cavalier;4;Iron Sword,Iron Lance;12,36;Pursue;Fulmor
+enemy;0;Cav3_2;Cavalier;4;Iron Sword,Iron Lance;13,36;Pursue;Fulmor
+enemy;0;Cav3_3;Cavalier;4;Iron Sword,Iron Lance;14,36;Pursue;Fulmor
 # === Triggers ===

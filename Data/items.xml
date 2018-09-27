@@ -27,50 +27,50 @@
         <components>weapon,uses,weight</components>
         <weapontype>Sword</weapontype>
  
-        <uses>35</uses>
+        <uses>32</uses>
         <value>20</value>
         <RNG>1</RNG>
         <desc></desc>
 		<weight>4</weight>
         
 		<MT>5</MT>
-		<HIT>80</HIT>
+		<HIT>75</HIT>
 		<LVL>D</LVL>
     </item>
 	
 	<item name="Mithril Sword">
         <id>Mithril Sword</id>
         <spritetype>Sword</spritetype>
-        <spriteid>3</spriteid>       
+        <spriteid>4</spriteid>       
         <components>weapon,uses,weight</components>
         <weapontype>Sword</weapontype>
  
-        <uses>30</uses>
+        <uses>25</uses>
         <value>30</value>
         <RNG>1</RNG>
         <desc></desc>
 		<weight>5</weight>
 
 		<MT>7</MT>
-		<HIT>75</HIT>
+		<HIT>65</HIT>
 		<LVL>C</LVL>
     </item>
 	
     <item name="Great Sword">
         <id>Great Sword</id>
         <spritetype>Sword</spritetype>
-        <spriteid>6</spriteid>       
+        <spriteid>3</spriteid>       
         <components>weapon,uses,weight</components>
         <weapontype>Sword</weapontype>
  
-        <uses>25</uses>
+        <uses>18</uses>
         <value>40</value>
         <RNG>1</RNG>
         <desc></desc>
 		<weight>6</weight>
         
 		<MT>9</MT>
-		<HIT>70</HIT>
+		<HIT>55</HIT>
 		<LVL>B</LVL>
     </item>
 	
@@ -82,20 +82,20 @@
         <weapontype>Sword</weapontype>
  
         <RNG>1</RNG>
-        <uses>20</uses>
+        <uses>10</uses>
         <value>50</value>
         <desc></desc>
 		<weight>7</weight>
         
 		<MT>11</MT>
-		<HIT>65</HIT>
+		<HIT>45</HIT>
 		<LVL>A</LVL>
     </item>
 
     <item name="Iron Blade">
         <id>Iron Blade</id>
         <spritetype>Sword</spritetype>
-        <spriteid>1</spriteid>       
+        <spriteid>5</spriteid>       
         <components>weapon,uses,weight</components>
         <weapontype>Sword</weapontype>
  
@@ -113,7 +113,7 @@
 	    <item name="Steel Blade">
         <id>SteelBlade</id>
         <spritetype>Sword</spritetype>
-        <spriteid>1</spriteid>       
+        <spriteid>6</spriteid>       
         <components>weapon,uses,weight</components>
         <weapontype>Sword</weapontype>
  
@@ -124,14 +124,14 @@
 		<weight>9</weight>
         
 		<MT>9</MT>
-		<HIT>60</HIT>
+		<HIT>55</HIT>
 		<LVL>C</LVL>
     </item>
 	
 	    <item name="Mithril Blade">
         <id>Mithril Blade</id>
         <spritetype>Sword</spritetype>
-        <spriteid>1</spriteid>       
+        <spriteid>7</spriteid>       
         <components>weapon,uses,weight</components>
         <weapontype>Sword</weapontype>
  
@@ -142,14 +142,14 @@
 		<weight>10</weight>
         
 		<MT>11</MT>
-		<HIT>55</HIT>
+		<HIT>45</HIT>
 		<LVL>B</LVL>
     </item>
 	
 	    <item name="Great Blade">
         <id>Great Blade</id>
         <spritetype>Sword</spritetype>
-        <spriteid>1</spriteid>       
+        <spriteid>20</spriteid>       
         <components>weapon,uses,weight</components>
         <weapontype>Sword</weapontype>
  
@@ -160,7 +160,7 @@
 		<weight>11</weight>
         
 		<MT>12</MT>
-		<HIT>50</HIT>
+		<HIT>35</HIT>
 		<LVL>A</LVL>
     </item>
 
@@ -171,14 +171,14 @@
         <components>weapon,uses,reverse,weight</components>
         <weapontype>Sword</weapontype>
  
-        <uses>20</uses>
+        <uses>15</uses>
         <RNG>1</RNG>
         <value>80</value>
         <desc>Reverses the weapon triangle.</desc>
-        <weight>6</weight>
+        <weight>5</weight>
 				
-		<MT>6</MT>
-		<HIT>70</HIT>
+		<MT>7</MT>
+		<HIT>60</HIT>
 		<LVL>C</LVL>
     </item>
 
@@ -196,7 +196,7 @@
 		<weight>8</weight>
         
 		<MT>7</MT>
-		<HIT>65</HIT>
+		<HIT>45</HIT>
 		<LVL>B</LVL>
     </item>
 
@@ -211,10 +211,10 @@
         <value>140</value>
         <RNG>1</RNG>
         <desc>An upgraded but inaccurate brave weapon with a lot of power behind it.</desc>
-		<weight>9</weight>
+		<weight>8</weight>
         
 		<MT>10</MT>
-		<HIT>55</HIT>
+		<HIT>35</HIT>
 		<LVL>A</LVL>
     </item>
 	
@@ -244,7 +244,7 @@
         <components>weapon,uses,weight,magic,map_hit_color,status_on_equip</components>
         <weapontype>Sword</weapontype>
  
-        <uses>25</uses>
+        <uses>20</uses>
         <RNG>1-2</RNG>
         <value>60</value>
         <weight>7</weight>
@@ -265,7 +265,7 @@
         <components>weapon,uses,weight,magic,status_on_equip</components>
         <weapontype>Sword</weapontype>
  
-        <uses>25</uses>
+        <uses>15</uses>
         <RNG>1-2</RNG>
         <value>80</value>
         <weight>8</weight>
@@ -280,11 +280,11 @@
 	<item name="Aetherblade">
         <id>Aetherblade</id>
         <spritetype>Sword</spritetype>
-        <spriteid>13</spriteid>       
+        <spriteid>14</spriteid>       
         <components>weapon,uses,weight,magic,status_on_equip</components>
         <weapontype>Sword</weapontype>
  
-        <uses>25</uses>
+        <uses>10</uses>
         <RNG>1-2</RNG>
         <value>100</value>
         <weight>9</weight>
@@ -311,9 +311,9 @@
 
         <alternate_defense>SPD</alternate_defense>
 
-        <MT>5</MT>
+        <MT>4</MT>
         <HIT>85</HIT>
-        <LVL>D</LVL>
+        <LVL>Noah</LVL>
     </item>
 
     <item name="Magebane Swd">
@@ -339,7 +339,7 @@
 	<item name="Flash">
         <id>ArundelSword</id>
         <spritetype>Sword</spritetype>
-        <spriteid>18</spriteid>       
+        <spriteid>19</spriteid>       
         <components>weapon,uses,brave,weight</components>
         <weapontype>Sword</weapontype>
  
@@ -380,39 +380,39 @@
         <components>weapon,uses,weight</components>
         <weapontype>Lance</weapontype>
  
-        <uses>35</uses>
+        <uses>32</uses>
         <RNG>1</RNG>
         <value>28</value>
         <desc></desc>
-		<weight>5</weight>
+		<weight>6</weight>
         
 		<MT>7</MT>
-		<HIT>75</HIT>
+		<HIT>70</HIT>
 		<LVL>D</LVL>
     </item>
 
     <item name="Mithril Lance">
         <id>Mithril Lance</id>
         <spritetype>Lance</spritetype>
-        <spriteid>3</spriteid>       
+        <spriteid>8</spriteid>       
         <components>weapon,uses,weight</components>
         <weapontype>Lance</weapontype>
  
-        <uses>30</uses>
+        <uses>25</uses>
         <RNG>1</RNG>
         <value>42</value>
         <desc></desc>
 		<weight>6</weight>
         
 		<MT>9</MT>
-		<HIT>70</HIT>
+		<HIT>60</HIT>
 		<LVL>C</LVL>
     </item>
 
 	<item name="Great Lance">
         <id>Great Lance</id>
         <spritetype>Lance</spritetype>
-        <spriteid>6</spriteid>       
+        <spriteid>3</spriteid>       
         <components>weapon,uses,weight</components>
         <weapontype>Lance</weapontype>
  
@@ -613,7 +613,7 @@
     <item name="Mithril Axe">
         <id>Mithril Axe</id>
         <spritetype>Axe</spritetype>
-        <spriteid>3</spriteid>       
+        <spriteid>21</spriteid>       
         <components>weapon,uses,weight</components>
         <weapontype>Axe</weapontype>
  
@@ -631,7 +631,7 @@
     <item name="Great Axe">
         <id>Great Axe</id>
         <spritetype>Axe</spritetype>
-        <spriteid>6</spriteid>       
+        <spriteid>3</spriteid>       
         <components>weapon,uses,weight</components>
         <weapontype>Axe</weapontype>
  
@@ -807,8 +807,6 @@
 		<MT>5</MT>
 		<HIT>80</HIT>
 		<LVL>E</LVL>
-
-        <effective>Flying;8</effective>
     </item>
 
     <item name="Steel Bow">
@@ -818,21 +816,21 @@
         <components>weapon,uses,weight</components>
         <weapontype>Bow</weapontype>
  
-        <uses>35</uses>
+        <uses>32</uses>
         <RNG>2</RNG>
         <value>24</value>
         <desc></desc>
 		<weight>5</weight>
         
-		<MT>7</MT>
-		<HIT>75</HIT>
+		<MT>6</MT>
+		<HIT>70</HIT>
 		<LVL>D</LVL>
     </item>
 
     <item name="Mithril Bow">
-        <id>Yew Bow</id>
+        <id>Mithril Bow</id>
         <spritetype>Bow</spritetype>
-        <spriteid>3</spriteid>       
+        <spriteid>16</spriteid>       
         <components>weapon,uses,weight</components>
         <weapontype>Bow</weapontype>
  
@@ -840,17 +838,17 @@
         <RNG>2</RNG>
         <value>36</value>
         <desc></desc>
-		<weight>6</weight>
+		<weight>7</weight>
         
-		<MT>9</MT>
-		<HIT>70</HIT>
+		<MT>8</MT>
+		<HIT>60</HIT>
 		<LVL>C</LVL>
     </item>
 
-	<item name="Silver Bow">
+	<item name="Great Bow">
         <id>Silver Bow</id>
         <spritetype>Bow</spritetype>
-        <spriteid>6</spriteid>       
+        <spriteid>3</spriteid>       
         <components>weapon,uses,weight</components>
         <weapontype>Bow</weapontype>
  
@@ -883,7 +881,45 @@
         <LVL>A</LVL>
     </item>
 	
-    <item name="Brave Bow">
+	<item name="Shortbow">
+        <id>Blink Bow</id>
+        <spritetype>Bow</spritetype>
+        <spriteid>11</spriteid>       
+        <components>weapon,uses,weight</components>
+        <weapontype>Bow</weapontype>
+ 
+        <uses>20</uses>
+        <RNG>2</RNG>
+        <value>144</value>
+        <desc>A small bow used to hit tiny or evasive targets.</desc>
+		<weight>7</weight>
+        
+		<MT>3</MT>
+		<HIT>100</HIT>
+		<LVL>D</LVL>
+    </item>
+	
+	<item name="Recurve Bow">
+        <id>Recurve Bow</id>
+        <spritetype>Bow</spritetype>
+        <spriteid>11</spriteid>       
+        <components>weapon,uses,weight</components>
+        <weapontype>Bow</weapontype>
+ 
+        <uses>10</uses>
+        <RNG>2</RNG>
+        <value>144</value>
+        <desc>Ignores DEF. Targets enemy's SPD instead.</desc>
+        <weight>7</weight>
+
+        <alternate_defense>SPD</alternate_defense>
+        
+		<MT>6</MT>
+		<HIT>60</HIT>
+		<LVL>C</LVL>
+    </item>
+	
+    <item name="Quickdraw Bow">
         <id>Brave Bow</id>
         <spritetype>Bow</spritetype>
         <spriteid>11</spriteid>       
@@ -893,18 +929,18 @@
         <uses>30</uses>
         <RNG>2</RNG>
         <value>144</value>
-        <desc>Allows two consecutive hits.</desc>
-		<weight>9</weight>
+        <desc>Allows two consecutive hits. Deals poor damage to armoured targets.</desc>
+		<weight>7</weight>
         
-		<MT>9</MT>
-		<HIT>60</HIT>
-		<LVL>B</LVL>
+		<MT>2</MT>
+		<HIT>65</HIT>
+		<LVL>D</LVL>
     </item>
 	
     <item name="Master Bow">
         <id>Master Bow</id>
         <spritetype>Bow</spritetype>
-        <spriteid>11</spriteid>       
+        <spriteid>13</spriteid>       
         <components>weapon,uses,brave,weight</components>
         <weapontype>Bow</weapontype>
  
@@ -922,7 +958,7 @@
     <item name="Longbow">
         <id>Longbow</id>
         <spritetype>Bow</spritetype>
-        <spriteid>14</spriteid>       
+        <spriteid>15</spriteid>       
         <components>weapon,uses,weight</components>
         <weapontype>Bow</weapontype>
  
@@ -937,10 +973,10 @@
 		<LVL>D</LVL>
     </item>
 	
-	<item name="Great Bow">
+	<item name="Great Longbow">
         <id>Great Bow</id>
         <spritetype>Bow</spritetype>
-        <spriteid>6</spriteid>       
+        <spriteid>14</spriteid>       
         <components>weapon,uses,weight</components>
         <weapontype>Bow</weapontype>
  
@@ -1055,7 +1091,7 @@
     <item name="Corona Ward">
         <id>Corona</id>
         <spritetype>Light</spritetype>
-        <spriteid>2</spriteid>       
+        <spriteid>6</spriteid>       
         <components>weapon,uses,map_hit_color</components>
         <weapontype>Light</weapontype>
  
@@ -1148,7 +1184,7 @@
     <item name="Rescue">
         <id>Rescue</id>
         <spritetype>Light</spritetype>
-        <spriteid>10</spriteid>       
+        <spriteid>9</spriteid>       
         <components>spell,extra_select,uses,movement,beneficial,no_ai,map_hit_color</components>
         <weapontype>Light</weapontype>
  
@@ -1209,7 +1245,7 @@
     <item name="Refresh">
         <id>Refresh</id>
         <spritetype>Light</spritetype>
-        <spriteid>6</spriteid>       
+        <spriteid>12</spriteid>       
         <components>spell,uses,beneficial,status,no_ai,target_restrict</components>
         <weapontype>Light</weapontype>
  
@@ -1286,7 +1322,7 @@
 	<item name="Elwind Ward">
         <id>Elwind</id>
         <spritetype>Anima</spritetype>
-        <spriteid>0</spriteid>       
+        <spriteid>4</spriteid>       
         <components>weapon,uses,status_on_equip</components>
         <weapontype>Anima</weapontype>
  
@@ -1304,7 +1340,7 @@
 	<item name="Elfire Ward">
         <id>Elfire</id>
         <spritetype>Anima</spritetype>
-        <spriteid>3</spriteid>       
+        <spriteid>5</spriteid>       
         <components>weapon,uses,map_hit_color,status_on_equip</components>
         <weapontype>Anima</weapontype>
  
@@ -1324,7 +1360,7 @@
     <item name="Elthunder Ward">
         <id>Elthunder</id>
         <spritetype>Anima</spritetype>
-        <spriteid>13</spriteid>       
+        <spriteid>6</spriteid>       
         <components>weapon,uses,status_on_equip</components>
         <weapontype>Anima</weapontype>
  
@@ -1339,10 +1375,10 @@
         <LVL>B</LVL>
     </item>
 	
-	<item name="Tornado Ward">
-        <id>Tornado</id>
+	<item name="Blizzard Ward">
+        <id>Blizzard</id>
         <spritetype>Anima</spritetype>
-        <spriteid>0</spriteid>       
+        <spriteid>10</spriteid>       
         <components>weapon,uses,status_on_equip</components>
         <weapontype>Anima</weapontype>
  
@@ -1378,7 +1414,7 @@
 	<item name="Shatter">
         <id>Shatter</id>
         <spritetype>Anima</spritetype>
-        <spriteid>3</spriteid>       
+        <spriteid>2</spriteid>       
         <components>spell,uses,damage,detrimental,map_hit_color</components>
         <weapontype>Anima</weapontype>
  
@@ -1397,7 +1433,7 @@
     <item name="Wyrmsfire">
         <id>Wyrmsfire</id>
         <spritetype>Anima</spritetype>
-        <spriteid>5</spriteid>       
+        <spriteid>8</spriteid>       
         <components>spell,uses,aoe,hit,damage,detrimental,ai_speed_up,map_hit_color,aoe_anim</components>
         <weapontype>Anima</weapontype>
  
@@ -1436,8 +1472,8 @@
     </item>
 
     <!-- Possibly just make this lower SPD -5? -->
-    <item name="Blizzard">
-        <id>Blizzard</id>
+    <item name="BlizzardUnused">
+        <id>BlizzardUnused</id>
         <spritetype>Anima</spritetype>
         <spriteid>10</spriteid>       
         <components>spell,uses,aoe,hit,damage,status,detrimental,ai_speed_up,aoe_anim</components>
@@ -1496,8 +1532,8 @@
         <sfx_on_cast>FireCharge</sfx_on_cast>
     </item>
 	
-    <item name="Fireball">
-        <id>Fireball</id>
+    <item name="FireballUnused">
+        <id>FireballUnused</id>
         <spritetype>Anima</spritetype>
         <spriteid>8</spriteid>       
         <components>spell,uses,aoe,hit,damage,detrimental,ai_speed_up,map_hit_color,aoe_anim</components>
@@ -1579,7 +1615,7 @@
     <item name="Howl Ward">
         <id>Howl</id>
         <spritetype>Dark</spritetype>
-        <spriteid>3</spriteid>       
+        <spriteid>6</spriteid>       
         <components>weapon,uses,map_hit_color</components>
         <weapontype>Dark</weapontype>
  
@@ -1598,7 +1634,7 @@
     <item name="Fenrir Ward">
         <id>Fenrir</id>
         <spritetype>Dark</spritetype>
-        <spriteid>3</spriteid>       
+        <spriteid>8</spriteid>       
         <components>weapon,uses,map_hit_color</components>
         <weapontype>Dark</weapontype>
  
@@ -1614,10 +1650,10 @@
         <map_hit_color>-248,-248,-248</map_hit_color>
     </item>
 	
-    <item name="Demon Ward">
-        <id>Demon</id>
+    <item name="Abyss Ward">
+        <id>Abyss</id>
         <spritetype>Dark</spritetype>
-        <spriteid>3</spriteid>       
+        <spriteid>10</spriteid>       
         <components>weapon,uses,map_hit_color</components>
         <weapontype>Dark</weapontype>
  
@@ -1678,7 +1714,7 @@
     <item name="Stun">
         <id>Stun</id>
         <spritetype>Dark</spritetype>
-        <spriteid>6</spriteid>       
+        <spriteid>7</spriteid>       
         <components>spell,uses,status,hit,detrimental,map_hit_color</components>
         <weapontype>Dark</weapontype>
  
@@ -1698,7 +1734,7 @@
     <item name="Disintegrate">
         <id>Disintegrate</id>
         <spritetype>Dark</spritetype>
-        <spriteid>8</spriteid>       
+        <spriteid>3</spriteid>       
         <components>spell,uses,hit,damage,half,detrimental,map_hit_color</components>
         <weapontype>Dark</weapontype>
  
@@ -1738,7 +1774,7 @@
     <item name="Warp">
         <id>Warp</id>
         <spritetype>Dark</spritetype>
-        <spriteid>10</spriteid>       
+        <spriteid>9</spriteid>       
         <components>spell,extra_select,uses,movement,beneficial,no_ai,map_hit_color</components>
         <weapontype>Dark</weapontype>
  
@@ -1863,7 +1899,7 @@
         <uses>1</uses>
         <RNG>0</RNG>
         <value>300</value>
-        <desc>A draught that makes the user's next attack strike twice. Disables double attacking.
+        <desc>A draught that makes the user's next attack strike twice.
 		
 		"You haven't seen anything yet." - Noah</desc>
         <status>Barkskin</status>
@@ -2188,6 +2224,34 @@
         <summon_desc>A summoned phantom</summon_desc>
         <summon_ai>Pursue</summon_ai>
         <summon_s_id>Phantom</summon_s_id>
+    </item>
+	
+	<!-- Unobtainable Debug Items -->
+	<item name="Debug Break">
+        <id>DebugBreak</id>
+        <spritetype>Boosters</spritetype>
+        <spriteid>7</spriteid>       
+        <components>usable,uses,permanent_stat_increase,booster,beneficial</components>
+        
+        <!-- HP, STR, MAG, SKL, SPD, LCK, DEF, RES, CON, MOV -->
+        <stat_increase>99,99,99,99,99,99,99,99,99,0</stat_increase>
+        <uses>99</uses>
+        <RNG>0</RNG>
+        <value>8000</value>
+        <desc>+99 all stats except MOV</desc>   
+    </item>
+	
+	<item name="Debug Swift">
+        <id>DebugSwift</id>
+        <spritetype>Boosters</spritetype>
+        <spriteid>11</spriteid>       
+        <components>status_on_hold,beneficial</components>
+	
+        <stat_increase>0,0,0,0,0,0,0,0,0,99</stat_increase>
+        <RNG>0</RNG>
+        <value>4000</value>
+        <status_on_hold>Ghost,Refresh</status_on_hold>
+        <desc>Ghost + 99 MOV + Infinitive Re-Move?</desc>   
     </item>
     
 </item_catalog> 

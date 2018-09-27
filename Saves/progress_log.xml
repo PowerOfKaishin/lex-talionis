@@ -1,0 +1,154 @@
+<level name="1">
+	<mode>Normal</mode>
+	<money>0</money>
+	<convoy></convoy>
+	<units>
+		<unit name="Noah">
+			<level>1</level>
+			<exp>10</exp>
+			<items>Iron Sword 39,Rapier 20,Elixir 1</items>
+			<wexp>14,0,0,0,0,0,1</wexp>
+			<skills></skills>
+		</unit>
+		<unit name="Kalin">
+			<level>1</level>
+			<exp>40</exp>
+			<items>Iron Axe 38,Elixir 1,Wyvern Tear 1,Hatchet 40</items>
+			<wexp>0,0,3,0,0,0,0</wexp>
+			<skills></skills>
+		</unit>
+	</units>
+</level>
+
+<level name="1">
+	<mode>Normal</mode>
+	<money>0</money>
+	<convoy></convoy>
+	<units>
+		<unit name="Noah">
+			<level>1</level>
+			<exp>63</exp>
+			<items>Iron Sword 38,Elixir 1,Pride +1 1</items>
+			<wexp>15,0,0,0,0,0,1</wexp>
+			<skills></skills>
+		</unit>
+		<unit name="Kalin">
+			<level>2</level>
+			<exp>70</exp>
+			<items>Iron Axe 33,Hatchet 40,Elixir 1,Wyvern Tear 1</items>
+			<wexp>0,0,6,0,0,0,0</wexp>
+			<skills></skills>
+		</unit>
+	</units>
+</level>
+
+<level name="1">
+	<mode>Hard</mode>
+	<money>0</money>
+	<convoy></convoy>
+	<units>
+		<unit name="Noah">
+			<level>2</level>
+			<exp>40</exp>
+			<items>Iron Sword 31,Elixir 1</items>
+			<wexp>17,0,0,0,0,0,1</wexp>
+			<skills></skills>
+		</unit>
+		<unit name="Kalin">
+			<level>1</level>
+			<exp>70</exp>
+			<items>Hatchet 34,Iron Axe 39,Wyvern Tear 1</items>
+			<wexp>0,0,6,0,0,0,0</wexp>
+			<skills></skills>
+		</unit>
+	</units>
+</level>
+
+<level name="1">
+	<mode>Normal</mode>
+	<money>0</money>
+	<convoy></convoy>
+	<units>
+		<unit name="Noah">
+			<level>1</level>
+			<exp>50</exp>
+			<items>Iron Sword 33,Elixir 1</items>
+			<wexp>16,0,0,0,0,0,1</wexp>
+			<skills></skills>
+		</unit>
+		<unit name="Kalin">
+			<level>2</level>
+			<exp>22</exp>
+			<items>Iron Axe 30,Elixir 1,Wyvern Tear 1,Hatchet 40</items>
+			<wexp>0,0,9,0,0,0,0</wexp>
+			<skills></skills>
+		</unit>
+	</units>
+</level>
+
+<level name="1">
+	<mode>Hard</mode>
+	<money>0</money>
+	<convoy></convoy>
+	<units>
+		<unit name="Noah">
+			<level>1</level>
+			<exp>83</exp>
+			<items>Iron Sword 30,Pride +1 1</items>
+			<wexp>17,0,0,0,0,0,1</wexp>
+			<skills></skills>
+		</unit>
+		<unit name="Kalin">
+			<level>1</level>
+			<exp>50</exp>
+			<items>Iron Axe 37,Elixir 1,Wyvern Tear 1,Hatchet 40</items>
+			<wexp>0,0,4,0,0,0,0</wexp>
+			<skills></skills>
+		</unit>
+	</units>
+</level>
+
+<level name="1">
+	<mode>Normal</mode>
+	<money>0</money>
+	<convoy></convoy>
+	<units>
+		<unit name="Noah">
+			<level>1</level>
+			<exp>63</exp>
+			<items>Iron Sword 37,Elixir 1,Pride +1 1</items>
+			<wexp>15,0,0,0,0,0,1</wexp>
+			<skills></skills>
+		</unit>
+		<unit name="Kalin">
+			<level>2</level>
+			<exp>80.0</exp>
+			<items>Iron Axe 32,Wyvern Tear 1,Hatchet 40</items>
+			<wexp>0,0,7,0,0,0,0</wexp>
+			<skills></skills>
+		</unit>
+	</units>
+</level>
+
+<level name="1">
+	<mode>Hard</mode>
+	<money>0</money>
+	<convoy></convoy>
+	<units>
+		<unit name="Noah">
+			<level>2</level>
+			<exp>71</exp>
+			<items>Iron Sword 28,Elixir 1</items>
+			<wexp>20,0,0,0,0,0,1</wexp>
+			<skills></skills>
+		</unit>
+		<unit name="Kalin">
+			<level>2</level>
+			<exp>11</exp>
+			<items>Iron Axe 32,Wyvern Tear 1,Hatchet 40</items>
+			<wexp>0,0,7,0,0,0,0</wexp>
+			<skills></skills>
+		</unit>
+	</units>
+</level>
+

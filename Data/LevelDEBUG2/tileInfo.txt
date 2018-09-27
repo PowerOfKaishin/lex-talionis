@@ -1,0 +1,5 @@
+18,16:Enemy_Seize=CastleEntrance
+11,18:Village=DownRightVillage
+2,6:Village=UpLeftVillage
+1,19:Village=DownLeftVillage
+16,7:Village=UpRightVillage
