@@ -1,18 +1,26 @@
-# Custom imports
 import os
-import GlobalConstants as GC
-import configuration as cf
-import MenuFunctions, Dialogue, CustomObjects, UnitObject, SaveLoad
-import Interaction, LevelUp, StatusObject, ItemMethods
-import WorldMap, InputManager, Banner, Engine, Utility, Image_Modification
-import BattleAnimation, TextChunk, Weapons
+
+try:
+    import GlobalConstants as GC
+    import configuration as cf
+    import MenuFunctions, Dialogue, CustomObjects, UnitObject, SaveLoad
+    import Interaction, LevelUp, StatusObject, ItemMethods
+    import WorldMap, InputManager, Banner, Engine, Utility, Image_Modification
+    import BattleAnimation, TextChunk, Weapons
+except ImportError:
+    from . import GlobalConstants as GC
+    from . import configuration as cf
+    from . import MenuFunctions, Dialogue, CustomObjects, UnitObject, SaveLoad
+    from . import Interaction, LevelUp, StatusObject, ItemMethods
+    from . import WorldMap, InputManager, Banner, Engine, Utility, Image_Modification
+    from . import BattleAnimation, TextChunk, Weapons
 
 import logging
 logger = logging.getLogger(__name__)
 # === Finite State Machine Object ===============================
 class StateMachine(object):
     def __init__(self, state_list=[], temp_state=[]):
-        import PrepBase, Transitions, OptionsMenu, InfoMenu, UnitMenu, DebugMode
+        from . import PrepBase, Transitions, OptionsMenu, InfoMenu, UnitMenu, DebugMode
         self.all_states = {'free': FreeState,
                            'turn_change': TurnChangeState,
                            'move': MoveState,
@@ -1060,7 +1068,7 @@ class ItemChildState(State):
                 use = False
             elif selection.c_uses and selection.c_uses.uses <= 0:
                 use = False
-            elif selection.promotion and not current_unit.can_promote_using(selection, metaDataObj):
+            elif selection.booster and not current_unit.can_use_booster(selection, metaDataObj):
                 use = False
             if use:
                 options.append(cf.WORDS['Use'])
@@ -1395,6 +1403,8 @@ class SpellState(State):
         # Go back to weapon choice
         elif event == 'BACK':
             GC.SOUNDDICT['Select 4'].play()
+            spell = attacker.getMainSpell()
+            self.reapply_old_values(spell)
             gameStateObj.stateMachine.back()
 
         elif event == 'SELECT':
@@ -1411,6 +1421,8 @@ class SpellState(State):
                     if spell.extra_select and spell.extra_select_index < len(spell.extra_select):
                         self.handle_extra_select(gameStateObj, spell)
                         spell.extra_select_targets.append(cur_unit)  # Must be done after handle_extra_select
+                        self.end(gameStateObj, metaDataObj)
+                        self.begin(gameStateObj, metaDataObj)
                     else:
                         self.reapply_old_values(spell)
                         defender, splash = Interaction.convert_positions(gameStateObj, attacker, attacker.position, cur_unit.position, spell)
@@ -1420,10 +1432,12 @@ class SpellState(State):
                         gameStateObj.combatInstance = Interaction.start_combat(gameStateObj, attacker, defender, cur_unit.position, splash, spell)
                         gameStateObj.stateMachine.changeState('combat')
                         GC.SOUNDDICT['Select 1'].play()
-            elif targets == 'Tile':
+            elif targets == 'Tile' or targets == 'TileNoUnit':
                 if spell.extra_select and spell.extra_select_index < len(spell.extra_select):
                     self.handle_extra_select(gameStateObj, spell)
                     spell.extra_select_targets.append(gameStateObj.cursor.position)
+                    self.end(gameStateObj, metaDataObj)  # Faking moving to a new spell state
+                    self.begin(gameStateObj, metaDataObj)
                 else:
                     self.reapply_old_values(spell)
                     defender, splash = Interaction.convert_positions(gameStateObj, attacker, attacker.position, gameStateObj.cursor.position, spell)
@@ -1461,7 +1475,7 @@ class SpellState(State):
         spell.RNG = spell.extra_select[idx].RNG
         spell.spell.targets = spell.extra_select[idx].targets
         spell.extra_select_index += 1
-        gameStateObj.stateMachine.changeState('spell')
+        # gameStateObj.stateMachine.changeState('spell')
         GC.SOUNDDICT['Select 1'].play()
 
     def reapply_old_values(self, spell):
@@ -1480,7 +1494,7 @@ class SpellState(State):
         spell = attacker.getMainSpell()
         targets = spell.spell.targets
         if gameStateObj.cursor.currentSelectedUnit:
-            if targets == 'Tile':
+            if targets == 'Tile' or targets == 'TileNoUnit':
                 attacker.displaySpellInfo(mapSurf, gameStateObj)
             elif gameStateObj.cursor.currentHoveredUnit: 
                 attacker.displaySpellInfo(mapSurf, gameStateObj, gameStateObj.cursor.currentHoveredUnit)
@@ -2373,7 +2387,11 @@ class PromotionChoiceState(State):
             anim.update()
 
     def draw(self, gameStateObj, metaDataObj):
-        surf = State.draw(self, gameStateObj, metaDataObj)
+        # surf = State.draw(self, gameStateObj, metaDataObj)
+        surf = gameStateObj.generic_surf
+        if gameStateObj.background:
+            if gameStateObj.background.draw(surf):
+                gameStateObj.background = None
         # Anim
         top = 88
         surf.blit(self.left_platform, (GC.WINWIDTH // 2 - self.left_platform.get_width() + self.anim_offset + 52, top))
@@ -2556,7 +2574,11 @@ class PromotionState(State):
             self.current_anim.update()
 
     def draw(self, gameStateObj, metaDataObj):
-        surf = State.draw(self, gameStateObj, metaDataObj)
+        # surf = State.draw(self, gameStateObj, metaDataObj)
+        surf = gameStateObj.generic_surf
+        if gameStateObj.background:
+            if gameStateObj.background.draw(surf):
+                gameStateObj.background = None
 
         if self.darken_background or self.target_dark:
             bg = Image_Modification.flickerImageTranslucent(GC.IMAGESDICT['BlackBackground'], 100 - abs(int(self.darken_background * 12.5)))
@@ -2630,7 +2652,8 @@ class ItemGainState(State):
         # To handle promotion
         under_state = gameStateObj.stateMachine.get_under_state(self)
         if under_state and isinstance(under_state, ExpGainState) or isinstance(under_state, ItemGainState) \
-           or isinstance(under_state, CombatState) or isinstance(under_state, PromotionState):
+           or isinstance(under_state, CombatState) or isinstance(under_state, PromotionState) \
+           or isinstance(under_state, gameStateObj.stateMachine.all_states['prep_items_choices']):
             mapSurf = under_state.draw(gameStateObj, metaDataObj)
         # For Dialogue
         elif gameStateObj.message:

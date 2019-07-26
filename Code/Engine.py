@@ -6,7 +6,10 @@ if PYGAME_SDL2:
 import pygame
 import sys
 
-import configuration
+try:
+    import configuration
+except:
+    from . import configuration
 
 import logging
 logger = logging.getLogger(__name__)
@@ -245,6 +248,7 @@ class Song(object):
             self.loop = None
 
     def swap(self):
+        logger.info('Music: Swap to Loop')
         self.song = self.loop[:]
         self.loop = None
 
@@ -442,6 +446,8 @@ class MusicThread(object):
         # If there's no music currently playing, make it so that music does play
         if self.current and not pygame.mixer.music.get_busy():
             logger.debug('Music: Music not playing!')
+            if self.current.loop:
+                self.current.swap()
             pygame.mixer.music.load(self.current.song)
             pygame.mixer.music.play(0)
 

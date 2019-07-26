@@ -3,10 +3,16 @@ import random
 from collections import OrderedDict, Counter
 
 # Custom imports
-import GlobalConstants as GC
-import configuration as cf
-import CustomObjects, StateMachine, AStar, Support, Engine, Dialogue
-import StatusObject, UnitObject, SaveLoad, InputManager, ItemMethods
+try:
+    import GlobalConstants as GC
+    import configuration as cf
+    import CustomObjects, StateMachine, AStar, Support, Engine, Dialogue, Cursor
+    import StatusObject, UnitObject, SaveLoad, InputManager, ItemMethods
+except ImportError:
+    from . import GlobalConstants as GC
+    from . import configuration as cf
+    from . import CustomObjects, StateMachine, AStar, Support, Engine, Dialogue, Cursor
+    from . import StatusObject, UnitObject, SaveLoad, InputManager, ItemMethods
 
 import logging
 logger = logging.getLogger(__name__)
@@ -211,7 +217,7 @@ class GameStateObj(object):
             cursor_position = lord_position
         else:
             cursor_position = (0, 0)
-        self.cursor = CustomObjects.Cursor('Cursor', cursor_position)
+        self.cursor = Cursor.Cursor('Cursor', cursor_position)
         self.fake_cursors = []
         self.tutorial_mode = False
 
@@ -508,11 +514,12 @@ class GameStateObj(object):
                 p_log.write('\n*** ' + unit.name + ': ' + ','.join([skill.name for skill in unit.status_effects]))
                 p_log.write('\nLvl ' + str(unit.level) + ', Exp ' + str(unit.exp))
                 p_log.write('\nWexp: ' + ', '.join([str(wexp_num) for wexp_num in unit.wexp]))
-                p_log.write('\nItems: ' + ', '.join([item.name + ' ' + str(item.uses.uses if item.uses else '--') for item in unit.items]))
+                p_log.write('\nItems: ' + ', '.join([item.id + ' ' + str(item.uses.uses if item.uses else '--') for item in unit.items]))
             p_log.write('\n*** Convoy:')
-            p_log.write('\nItems: ' + ', '.join([item.name + ' ' + str(item.uses.uses if item.uses else '--') for item in self.convoy]))
+            p_log.write('\nItems: ' + ', '.join([item.id + ' ' + str(item.uses.uses if item.uses else '--') for item in self.convoy]))
 
     def output_progress_xml(self):
+        klasses = self.metaDataObj['class_dict']
         with open('Saves/progress_log.xml', 'a') as p_log:
             p_log.write('<level name="' + str(self.game_constants['level']) + '">\n')
             p_log.write('\t<mode>' + self.mode['name'] + '</mode>\n')
@@ -527,7 +534,9 @@ class GameStateObj(object):
                 if unit.dead:  # Don't write about dead units
                     continue
                 p_log.write('\t\t<unit name="' + unit.name + '">\n')
-                p_log.write('\t\t\t<level>' + str(unit.level) + '</level>\n')
+                tier = min(klasses[unit.klass]['tier'], len(cf.CONSTANTS['max_level']) - 1)
+                level = unit.level + (tier - 1) * cf.CONSTANTS['max_level'][tier]
+                p_log.write('\t\t\t<level>' + str(level) + '</level>\n')
                 p_log.write('\t\t\t<exp>' + str(unit.exp) + '</exp>\n')
                 p_log.write('\t\t\t<items>' + ','.join([item.name + ' ' + str(item.uses.uses if item.uses else '--') for item in unit.items]) + '</items>\n')
                 p_log.write('\t\t\t<wexp>' + ','.join([str(wexp) for wexp in unit.wexp]) + '</wexp>\n')

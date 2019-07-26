@@ -1,8 +1,14 @@
 # Display Unit Info function
-import GlobalConstants as GC
-import configuration as cf
-import CustomObjects, Image_Modification, Engine
-import StatusObject, Banner, Utility, Weapons
+try:
+    import GlobalConstants as GC
+    import configuration as cf
+    import CustomObjects, Image_Modification, Engine
+    import StatusObject, Banner, Utility, Weapons
+except ImportError:
+    from . import GlobalConstants as GC
+    from . import configuration as cf
+    from . import CustomObjects, Image_Modification, Engine
+    from . import StatusObject, Banner, Utility, Weapons
 
 ####################################################################
 # Displays the level up screen
@@ -52,7 +58,12 @@ class levelUpScreen(object):
         self.state = CustomObjects.StateMachine('init')
         self.animations, self.arrow_animations, self.number_animations = [], [], []
         if force_level:
-            self.unit.apply_levelup(force_level, exp == 0)
+            # Need to prevent from going over max
+            current_stats = list(self.unit.stats.values())
+            klass = gameStateObj.metaDataObj['class_dict'][self.unit.klass]
+            for index, stat in enumerate(self.levelup_list):
+                self.levelup_list[index] = min(stat, klass['max'][index] - current_stats[index].base_stat)
+            self.unit.apply_levelup(self.levelup_list, exp == 0)
             self.state.changeState('levelScreen')
             self.state_time = Engine.get_time()
         if force_promote:

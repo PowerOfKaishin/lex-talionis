@@ -2,10 +2,16 @@
 import os
 
 # Custom imports
-import GlobalConstants as GC
-import configuration as cf
-import StateMachine, MenuFunctions, ItemMethods
-import Image_Modification, CustomObjects, Dialogue, WorldMap, Engine, TextChunk
+try:
+    import GlobalConstants as GC
+    import configuration as cf
+    import StateMachine, MenuFunctions, ItemMethods
+    import Image_Modification, CustomObjects, Dialogue, WorldMap, Engine, TextChunk, Banner
+except ImportError:
+    from . import GlobalConstants as GC
+    from . import configuration as cf
+    from . import StateMachine, MenuFunctions, ItemMethods
+    from . import Image_Modification, CustomObjects, Dialogue, WorldMap, Engine, TextChunk, Banner
 
 class PrepMainState(StateMachine.State):
     def begin(self, gameStateObj, metaDataObj):
@@ -76,9 +82,14 @@ class PrepMainState(StateMachine.State):
                 # gameStateObj.banners.append(Banner.gameSavedBanner())
                 # gameStateObj.stateMachine.changeState('itemgain')
             elif selection == cf.WORDS['Fight']:
-                # self.menu = None
-                gameStateObj.background = None
-                gameStateObj.stateMachine.back()
+                if any(unit.position for unit in gameStateObj.allunits if unit.team == 'player'):
+                    # self.menu = None
+                    gameStateObj.background = None
+                    gameStateObj.stateMachine.back()
+                else:
+                    GC.SOUNDDICT['Select 4'].play()
+                    gameStateObj.banners.append(Banner.customBanner("Must select at least one unit!"))
+                    gameStateObj.stateMachine.changeState('itemgain')
 
     def update(self, gameStateObj, metaDataObj):
         StateMachine.State.update(self, gameStateObj, metaDataObj)
@@ -102,8 +113,10 @@ class PrepPickUnitsState(StateMachine.State):
             gameStateObj.background = None
 
         if not self.started:
-            units = [unit for unit in gameStateObj.allunits if unit.team == 'player' and not unit.dead]
-            units = sorted(units, key=lambda unit: unit.position, reverse=True)
+            player_units = [unit for unit in gameStateObj.allunits if unit.team == 'player' and not unit.dead]
+            lord_units = [unit for unit in player_units if unit.position and 'Formation' not in gameStateObj.map.tile_info_dict[unit.position]]
+            non_lord_units = [unit for unit in player_units if unit not in lord_units]
+            units = lord_units + sorted(non_lord_units, key=lambda unit: unit.position, reverse=True)
             gameStateObj.activeMenu = MenuFunctions.UnitSelectMenu(units, 2, 6, (110, 24))
     
         if not gameStateObj.background:
@@ -134,7 +147,9 @@ class PrepPickUnitsState(StateMachine.State):
 
         if event == 'SELECT':
             selection = gameStateObj.activeMenu.getSelection()
-            if selection.position:
+            if selection.position and 'Formation' not in gameStateObj.map.tile_info_dict[selection.position]:
+                GC.SOUNDDICT['Select 4'].play()  # Locked/Lord Character
+            elif selection.position:
                 GC.SOUNDDICT['Select 1'].play()
                 selection.position = None
             else:
@@ -152,14 +167,16 @@ class PrepPickUnitsState(StateMachine.State):
 
     def draw(self, gameStateObj, metaDataObj):
         surf = StateMachine.State.draw(self, gameStateObj, metaDataObj)
-        if gameStateObj.activeMenu:
+        if gameStateObj.activeMenu and gameStateObj.activeMenu.getSelection():
             MenuFunctions.drawUnitItems(surf, (4, 4 + 40), gameStateObj.activeMenu.getSelection(), include_top=True)
 
         # Draw Pick Units screen
-        backSurf = MenuFunctions.CreateBaseMenuSurf((132, 24), 'BrownPickBackground')
-        topleft = (110, 0)
-        num_units_map = len([unit for unit in gameStateObj.allunits if unit.position and unit.team == 'player'])
-        num_slots = len([value for position, value in gameStateObj.map.tile_info_dict.items() if 'Formation' in value])
+        backSurf = MenuFunctions.CreateBaseMenuSurf((132, 24), 'WhiteMenuBackgroundOpaque')
+        topleft = (110, 4)
+        player_units = [unit for unit in gameStateObj.allunits if unit.position and unit.team == 'player']
+        num_lords = len([unit for unit in player_units if 'Formation' not in gameStateObj.map.tile_info_dict[unit.position]])
+        num_units_map = len(player_units)
+        num_slots = num_lords + len([value for position, value in gameStateObj.map.tile_info_dict.items() if 'Formation' in value])
         pick_string = ['Pick ', str(num_slots - num_units_map), ' units  ', str(num_units_map), '/', str(num_slots)]
         pick_font = ['text_white', 'text_blue', 'text_white', 'text_blue', 'text_white', 'text_blue']
         word_index = 8
@@ -167,6 +184,8 @@ class PrepPickUnitsState(StateMachine.State):
             GC.FONT[pick_font[index]].blit(word, backSurf, (word_index, 4))
             word_index += GC.FONT[pick_font[index]].size(word)[0]
         surf.blit(backSurf, topleft)
+
+        gameStateObj.activeMenu.draw_cursor(surf, -16)
 
         return surf
 
@@ -378,7 +397,7 @@ class PrepItemsState(StateMachine.State):
 
     def draw(self, gameStateObj, metaDataObj):
         surf = StateMachine.State.draw(self, gameStateObj, metaDataObj)
-        if gameStateObj.activeMenu:
+        if gameStateObj.activeMenu and gameStateObj.activeMenu.getSelection():
             MenuFunctions.drawUnitItems(surf, (6, 8+16*4), gameStateObj.activeMenu.getSelection(), include_face=True, shimmer=2)
         # Draw quick sort display
         surf.blit(self.quick_sort_disp, (GC.WINWIDTH//2 + 10, GC.WINHEIGHT//2 + 9))
@@ -420,11 +439,7 @@ class PrepItemsChoicesState(StateMachine.State):
     def can_use(self, item, gameStateObj):
         current_unit = gameStateObj.cursor.currentSelectedUnit
         if item.usable and item.booster:
-            if item.promotion:
-                if current_unit.can_promote_using(item, gameStateObj.metaDataObj):
-                    return True
-                return False
-            return True
+            return current_unit.can_use_booster(item, gameStateObj.metaDataObj)
         return False
 
     def take_input(self, eventList, gameStateObj, metaDataObj):

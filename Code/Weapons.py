@@ -1,6 +1,9 @@
-# Weapons.py
-import GlobalConstants as GC
-import Engine
+try:
+    import GlobalConstants as GC
+    import Engine
+except:
+    from . import GlobalConstants as GC
+    from . import Engine
 
 # === WEAPON TRIANGLE OBJECT ==================================================
 class Weapon_Triangle(object):
@@ -126,7 +129,9 @@ class Weapon_Advantage(object):
     def _get_data(self, weapon, wexp, data):
         if weapon:
             weapon_type = weapon.TYPE
-            weapon_wexp = wexp[TRIANGLE.name_to_index[weapon.TYPE]]
+            if not weapon_type:
+                return self.no_advantage
+            weapon_wexp = wexp[TRIANGLE.name_to_index[weapon_type]]
             weapon_rank = EXP.number_to_letter(weapon_wexp)
             if weapon_type in data:
                 if weapon_rank in data[weapon_type]:

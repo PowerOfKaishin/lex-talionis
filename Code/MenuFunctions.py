@@ -1,9 +1,16 @@
 import datetime, collections
-import GlobalConstants as GC
-import configuration as cf
-import ItemMethods, Image_Modification, Utility, Engine, Counters
-import StateMachine, InfoMenu, GUIObjects
-import CustomObjects, TextChunk, Weapons
+try:
+    import GlobalConstants as GC
+    import configuration as cf
+    import ItemMethods, Image_Modification, Utility, Engine, Counters
+    import StateMachine, InfoMenu, GUIObjects
+    import CustomObjects, TextChunk, Weapons
+except ImportError:
+    from . import GlobalConstants as GC
+    from . import configuration as cf
+    from . import ItemMethods, Image_Modification, Utility, Engine, Counters
+    from . import StateMachine, InfoMenu, GUIObjects
+    from . import CustomObjects, TextChunk, Weapons
 
 import logging
 logger = logging.getLogger(__name__)
@@ -276,7 +283,8 @@ class StatusMenu(StateMachine.State):
 
         return self.backSurf
         
-def CreateBaseMenuSurf((width, height), baseimage='BaseMenuBackground', top_left_sigil=None):
+def CreateBaseMenuSurf(size, baseimage='BaseMenuBackground', top_left_sigil=None):
+    width, height = size
     menuBaseSprite = GC.IMAGESDICT[baseimage]
     # Get total width and height.
     # Each piece of the menu (9) should be 1/3 of these dimensions
@@ -1399,13 +1407,14 @@ class UnitSelectMenu(Counters.CursorControl):
 
     def draw(self, surf, gameStateObj):
         surf.blit(self.backsurf, self.topleft)
+        x_center = -16 if self.units_per_row == 2 else 0
 
         # Blit background highlight
         if self.highlight:
             highlightSurf = GC.IMAGESDICT['MenuHighlight']
             width = highlightSurf.get_width()
-            for slot in range((self.option_length-20)//width): # Gives me the amount of highlight needed
-                left = self.topleft[0] + 20 + self.currentSelection%self.units_per_row*self.option_length + slot*width 
+            for slot in range((self.option_length-4)//width): # Gives me the amount of highlight needed
+                left = self.topleft[0] + 20 + x_center + self.currentSelection%self.units_per_row*self.option_length + slot*width 
                 top = self.topleft[1] + (self.currentSelection-self.scroll*self.units_per_row)//self.units_per_row*self.option_height + 12
                 surf.blit(highlightSurf, (left, top))
         if self.draw_extra_marker:
@@ -1422,26 +1431,32 @@ class UnitSelectMenu(Counters.CursorControl):
                 unit_image = unit.sprite.create_image('gray')
             elif unit == self.options[self.currentSelection]:
                 unit_image = unit.sprite.create_image('active')
-            topleft = (self.topleft[0] - 16 - 4 + 16 + left*self.option_length, self.topleft[1] + 2 + (top+1)*self.option_height - unit_image.get_height() + 8)
+            topleft = (self.topleft[0] - 4 + x_center + left*self.option_length, self.topleft[1] + 2 + (top+1)*self.option_height - unit_image.get_height() + 8)
             surf.blit(unit_image, topleft)
 
             # Blit name
             font = GC.FONT['text_white']
-            if self.mode == 'position' and not unit.position:
-                font = GC.FONT['text_grey']
-            position = (self.topleft[0] + 20 + 1 + 16 + left*self.option_length, self.topleft[1] + 2 + top*self.option_height)
+            if self.mode == 'position':
+                if not unit.position:
+                    font = GC.FONT['text_grey']
+                elif unit.position and 'Formation' not in gameStateObj.map.tile_info_dict[unit.position]:
+                    font = GC.FONT['text_green']  # Locked/Lord character
+            position = (self.topleft[0] + 20 + 1 + 16 + x_center + left*self.option_length, self.topleft[1] + 2 + top*self.option_height)
             font.blit(unit.name, surf, position)
 
         # Blit cursor
-        left = self.topleft[0] + 8 + self.currentSelection%self.units_per_row*self.option_length + self.cursorAnim[self.cursorCounter]
-        top = self.topleft[1] + 4 + (self.currentSelection-self.scroll*self.units_per_row)//self.units_per_row*self.option_height + self.cursor_y_offset*8
-        self.cursor_y_offset = 0 # Reset
-        surf.blit(self.cursor, (left, top))
+        self.draw_cursor(surf, x_center)
         if self.draw_extra_marker:
             self.draw_extra_cursor(surf)
 
         if len(self.options) > self.units_per_row*self.num_rows:
             self.scroll_bar.draw(surf, self.scroll, self.num_rows, len(self.options)//self.units_per_row + 1)
+
+    def draw_cursor(self, surf, x_center):
+        left = self.topleft[0] + 8 + x_center + self.currentSelection%self.units_per_row*self.option_length + self.cursorAnim[self.cursorCounter]
+        top = self.topleft[1] + 4 + (self.currentSelection-self.scroll*self.units_per_row)//self.units_per_row*self.option_height + self.cursor_y_offset*8
+        self.cursor_y_offset = 0 # Reset
+        surf.blit(self.cursor, (left, top))
 
     def set_extra_marker(self, selection):
         self.draw_extra_marker = selection
