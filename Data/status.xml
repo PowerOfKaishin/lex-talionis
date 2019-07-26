@@ -1154,5 +1154,4 @@
         <!-- HP, STR, MAG, SKL, SPD, LCK, DEF, RES, CON, MOV -->
         <stat_change>-5,0,0,0,0,0,0,0,0,0</stat_change>
     </status>
-
 </status_catalog>

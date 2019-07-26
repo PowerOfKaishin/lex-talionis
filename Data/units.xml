@@ -11,7 +11,7 @@
         <bases>14,4,2,4,5,5,2,6,7</bases>
         <growths>95,55,30,60,60,50,40,100</growths>
         
-        <inventory>Iron Sword,Elixir_1</inventory>
+        <inventory>Iron Sword,Elixir_1,DebugSwift,DebugBreak</inventory>
         
         <level>1</level>
         <class>Lord</class>
@@ -193,7 +193,7 @@
         <bases>15,4,2,5,5,6,2,7,7</bases>
         <growths>95,55,30,60,60,50,40,100</growths>
         
-        <inventory>Iron Sword</inventory>
+        <inventory>Iron Sword,DebugSwift,DebugBreak</inventory>
         
         <level>2</level>
         <class>Lord</class>

@@ -152,3 +152,63 @@
 	</units>
 </level>
 
+<level name="DEBUG">
+	<mode>Normal</mode>
+	<money>0</money>
+	<convoy>Wind 35</convoy>
+	<units>
+		<unit name="Noah">
+			<level>3</level>
+			<exp>20</exp>
+			<items>Iron Sword 35,Debug Swift --</items>
+			<wexp>18,0,0,0,0,0,1</wexp>
+			<skills></skills>
+		</unit>
+	</units>
+</level>
+
+<level name="DEBUG">
+	<mode>Normal</mode>
+	<money>0</money>
+	<convoy>Wind 35</convoy>
+	<units>
+		<unit name="Noah">
+			<level>3</level>
+			<exp>20</exp>
+			<items>Iron Sword 35,Debug Swift --</items>
+			<wexp>18,0,0,0,0,0,1</wexp>
+			<skills></skills>
+		</unit>
+	</units>
+</level>
+
+<level name="DEBUG">
+	<mode>Normal</mode>
+	<money>0</money>
+	<convoy>Wind 35</convoy>
+	<units>
+		<unit name="Noah">
+			<level>3</level>
+			<exp>20</exp>
+			<items>Iron Sword 35,Debug Swift --</items>
+			<wexp>18,0,0,0,0,0,1</wexp>
+			<skills></skills>
+		</unit>
+	</units>
+</level>
+
+<level name="DEBUG">
+	<mode>Normal</mode>
+	<money>0</money>
+	<convoy>Wind 35</convoy>
+	<units>
+		<unit name="Noah">
+			<level>3</level>
+			<exp>20</exp>
+			<items>Iron Sword 35,Debug Swift --</items>
+			<wexp>18,0,0,0,0,0,1</wexp>
+			<skills></skills>
+		</unit>
+	</units>
+</level>
+

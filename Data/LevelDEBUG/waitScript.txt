@@ -1,0 +1,5 @@
+# Wait Script
+if;self.unit.team == 'player'
+	reset_unit;{unit}
+end
+	

@@ -1,4 +1,17 @@
 set_origin
+
+set_tile_info;o0,0
+# change_tile_sprite;o0,0;pulled_nav_switch
+set_cursor;13,19
+wait;200
+change_tile_sprite;12,18;WarpPanelGolden
+wait;200
+# appropriate dialogue
+set_tile_info;13,19;Escape=0
+
+
+
+
 if;self.name == 'NavigationSwitch'
 	if;gameStateObj.level_constants['telePower'] >= 5
 		set_tile_info;o0,0

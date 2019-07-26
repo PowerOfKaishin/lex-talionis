@@ -95,7 +95,7 @@
         <skills>1,Poise;5,Initiative;8,Feat</skills>
         <!-- HP, Str, Mag, Skl, Spd, Lck, Def, Res -->
 		<growths>105,60,15,55,55,40,25,15</growths>
-		<bases>13,3,0,3,3,0,3,0,6,5</bases>
+		<bases>13,3,0,3,3,0,2,0,6,5</bases>
 		<max>40,15,15,15,15,20,15,15,20</max>
         <desc>Professional soldiers for hire. Well-balanced, with superior abilities all around.</desc>
     </class>

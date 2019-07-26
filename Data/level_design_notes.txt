@@ -2,3 +2,5 @@ Tips for making later levels
 
 
 Have each piece (set of enemies, chest, door, switch) interact with other pieces (ie one ballista is in range of another but both have to be taken care of by different parties)
+
+If there are concepts the player needs to learn (only archers get slaying on wyvs, no double attacking on counter, etc.) put an unavoidable example in an early part of a chapter, so the player has this knowledge.

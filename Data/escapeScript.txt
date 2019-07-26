@@ -2,7 +2,7 @@
 # 
 # Level Specific
 # Level 4
-if;gameStateObj.game_constants['level'] == 4
+if;gameStateObj.game_constants['level'] == 2
 	if;self.unit.klass == 'Wagon'
 		inc_game_constant;Escaped_Wagons
 	end
@@ -31,8 +31,11 @@ elif;gameStateObj.game_constants['level'] == 6
 end
 #
 # Universal
+# if;self.unit.name == 'Noah'
+
+
 remove_unit;{unit}
-wait;200
+wait;500
 if;not any(unit.team in ("player", "other") for unit in gameStateObj.allunits if unit.position)
 	win_game
 end

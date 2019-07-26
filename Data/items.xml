@@ -2234,24 +2234,24 @@
         <components>usable,uses,permanent_stat_increase,booster,beneficial</components>
         
         <!-- HP, STR, MAG, SKL, SPD, LCK, DEF, RES, CON, MOV -->
-        <stat_increase>99,99,99,99,99,99,99,99,99,0</stat_increase>
+        <stat_increase>99,99,99,99,99,99,99,99,99,99</stat_increase>
         <uses>99</uses>
         <RNG>0</RNG>
         <value>8000</value>
-        <desc>+99 all stats except MOV</desc>   
+        <desc>+99 all stats</desc>   
     </item>
 	
 	<item name="Debug Swift">
         <id>DebugSwift</id>
         <spritetype>Boosters</spritetype>
         <spriteid>11</spriteid>       
-        <components>status_on_hold,beneficial</components>
+        <components>status_on_hold,beneficial,booster</components>
 	
-        <stat_increase>0,0,0,0,0,0,0,0,0,99</stat_increase>
+        <stat_increase>0,0,0,0,0,0,0,0,0,0</stat_increase>
         <RNG>0</RNG>
         <value>4000</value>
-        <status_on_hold>Ghost,Refresh</status_on_hold>
-        <desc>Ghost + 99 MOV + Infinitive Re-Move?</desc>   
+        <status_on_hold>Ghost</status_on_hold>
+        <desc>Grants ghost.</desc>   
     </item>
     
 </item_catalog> 
